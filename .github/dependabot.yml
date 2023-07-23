@@ -1,0 +1,15 @@
+# .github/dependabot.yml
+version: 2
+updates:
+  - package-ecosystem: "npm" # for a Node.js project
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "weekly" # check for updates weekly
+    commit-message:
+      prefix: "fix" # use 'fix' to follow conventional commit messages
+    open-pull-requests-limit: 10 # limit to 10 open pull requests at a time
+    reviewers:
+      - "username1" # replace with actual usernames
+      - "username2"
+    assignees:
+      - "username1" # replace with actual usernames
