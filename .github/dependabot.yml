@@ -5,11 +5,25 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly" # check for updates weekly
+      # Specify the day of the week Dependabot should raise updates
+      day: "monday"
+      # Specify the time Dependabot should raise updates
+      time: "05:00"
+      # Use this option to set the timezone Dependabot uses to schedule updates
+      timezone: "Asia/Seoul"
+    target-branch: "main" # specify target branch for PRs
+    allow:
+      - dependency-type: "direct" # only update direct dependencies, not sub-dependencies
     commit-message:
       prefix: "fix" # use 'fix' to follow conventional commit messages
+      prefix-development: "chore" # use 'chore' for development dependencies
+      include: "scope" # include scope in the commit message
     open-pull-requests-limit: 10 # limit to 10 open pull requests at a time
     reviewers:
       - "username1" # replace with actual usernames
       - "username2"
     assignees:
       - "username1" # replace with actual usernames
+    labels:
+      - "dependencies"
+      - "automerge" # if you have an auto-merge setup
