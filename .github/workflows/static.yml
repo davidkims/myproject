@@ -24,18 +24,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 14
 
       - name: Install Dependencies
         run: npm install
-        working-directory: .github/actions/configure-pages # assuming configure-pages action is in this directory
+        working-directory: .github/actions/configure-pages
 
       - name: Configure Pages
         run: npx github-pages-deploy-action
-        working-directory: .github/actions/configure-pages # assuming configure-pages action is in this directory
+        working-directory: .github/actions/configure-pages
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
